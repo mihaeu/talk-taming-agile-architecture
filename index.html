@@ -22,9 +22,23 @@
 		</script>
 
         <style>
-            .reveal section img {
+            .reveal section img, .reveal section blockquote {
                 border: none;
                 box-shadow: none;
+            }
+
+            h1 {
+                font-weight: bold;
+            }
+
+            .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+                color: #2c6aa8;
+            }
+
+            body {
+                background: url(images/bg.png);
+                background-size: cover;
+                background-repeat: no-repeat;
             }
 
             .reveal footer {
@@ -39,26 +53,54 @@
                 color: #2c6aa8;
             }
 
+            .reveal .text-border {
+                font-weight: bold;
+                text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+            }
+
+            .reveal .text-border-light {
+                font-weight: bold;
+                text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+            }
+
             .reveal .progress {
                 height: 15px;
-                /*background: #000;*/
             }
 
             .reveal .progress span {
                 background: #2c6aa8;
             }
+
+            ul.small li {
+                font-size: 0.6em;
+            }
         </style>
 	</head>
 	<body>
 		<div class="reveal">
+
             <footer>
-                Michael Haeuslmann (@mihaeu) -
-                <img src="images/tng-logo.png" alt="" width="150">
+                Michael Haeuslmann (@michaelhaeu) -
+                <img src="images/tng-logo-150.png">
             </footer>
+
 			<div class="slides">
-				<section>
+                <section data-background-image="images/so-agile.png" data-background-size="contain">
 					<h1>Taming Agile Architecture</h1>
-					<h2>Michael Haeuslmann</h2>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <!-- SPEAKER NOTES -->
+                    <aside class="notes">
+                        <ul>
+                            <li>2nd time at the IPC</li>
+                            <li>soft talk</li>
+                            <li>applied with two other technical talks</li>
+                        </ul>
+                    </aside>
 				</section>
 
                 <section>
@@ -69,25 +111,307 @@
                     <img src="images/tng-bg.png" alt="">
                 </section>
 
-                <section data-background-image="images/tng-facts-figures.png" data-background-size="contain ">
+                <section data-background-image="images/tng-facts-figures.png" data-background-size="contain">
+                </section>
 
+                <section>
+                    <img src="images/tng-project-avatar.gif" width="800">
+                </section>
+
+                <section data-background-image="images/tng-tag-cloud.png" data-background-size="contain">
+                </section>
+
+                <section data-background-image="images/background-agile-manifesto.jpg" data-background-size="contain">
+                    <blockquote>
+                        "Individuals and interactions over processes and tools..."
+                        <br>
+                        <br>
+                        - Agile Manifesto
+                    </blockquote>
+                    <h3 class="fragment text-border-light">Let's be agile, lets interact!</h3>
+
+                    <!-- SPEAKER NOTES -->
+                    <aside class="notes">
+                        <ul>
+                            <li>let's make this a conversation</li>
+                            <li>training from the back of the room</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Agenda</h2>
+                    <ul>
+                        <li>
+                            Agile/Architecture Myths
+                        </li>
+                        <li>
+                            Practicing Agile Architecture
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Why do we even talk about this?</h2>
+                    <blockquote>
+                        “The word 'agile' has been subverted to the point where it is effectively meaningless, and what passes for an agile community seems to be largely an arena for consultants and vendors to hawk services and products.”
+                        <br>
+                        <br>
+                        - Dave Thomas
+                    </blockquote>
+                </section>
+
+                <section>
+                    <h3>The Fine Art of Baloney Detection</h3>
+                    <img src="images/carl-sagan.jpg" width="400">
+                    <small>"The Demon-Haunted World: Science as a Candle in the Dark" - Carl Sagan</small>
+                    <ul class="small">
+                        <li class="fragment">there must be independent confirmation of "facts"</li>
+                        <li class="fragment">arguments from authorities carry little weight</li>
+                        <li class="fragment">try not to get overly attached to a hypothesis, just because it's yours</li>
+                        <li class="fragment">...</li>
+                    </ul>
+
+                    <!-- SPEAKER NOTES -->
+                    <aside class="notes">
+                        <ul>
+                            <li>let's apply baloney detection to agile</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Agile!</h2>
+                    <h3>The Good, the Hype and the Ugly</h3>
+                    <img src="images/agile-good-hype-ugly.png" width="200">
+                    <p>Bertrand Meyer</p>
+                </section>
+
+                <section data-background-image="images/background-agile-manifesto.jpg" data-background-size="contain">
+                    <h2>Agile Manifesto</h2>
+
+                    <blockquote style="font-size: 0.8em;">
+                        <strong>Individuals and interactions</strong><br> over processes and tools <br>
+                        <strong>Working software</strong><br> over comprehensive documentation <br>
+                        <strong>Customer collaboration</strong><br> over contract negotiation <br>
+                        <strong>Responding to change</strong><br> over following a plan <br>
+                    </blockquote>
+
+                    <blockquote class="fragment" style="font-size: 0.8em;font-weight: bold;">
+                        That is, while there is value in the items on <br>
+                        the right, we value the items on the left more.
+                    </blockquote>
+                </section>
+
+                <section>
+                    <h2>Myth #1</h2>
+                    <h3>Agile means no documentation</h3>
+                    <img src="images/no-doc.png" alt="">
+                </section>
+
+                <section data-background-image="images/truemmerfrauen.jpg" data-background-size="cover">
+                </section>
+
+                <section data-background-image="images/hippies.jpg" data-background-size="cover">
+                </section>
+
+                <section data-background-image="images/pillendreher.jpg" data-background-size="cover">
+                    <h2 class="text-border-light">Myth #2</h2>
+                    <h3 class="text-border-light">Agile means no architecture</h3>
+
+                    <!-- SPEAKER NOTES -->
+                    <aside class="notes">
+                        <ul>
+                            <li>big topic</li>
+                            <li>depends on team size</li>
+                            <li>depends on project size</li>
+                            <li>maybe okay if really small team</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section data-background-image="images/good-intent.jpg" data-background-size="contain">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h2 class="text-border-light">Myth #3</h2>
+                    <h3 class="text-border-light">Good coding practices lead to good architecture</h3>
+                </section>
+
+                <section data-background-image="images/easy-to-change.jpg" data-background-size="cover">
+                    <h2 class="text-border-light">Myth #4</h2>
+                    <h3 class="text-border-light">Agile means everything is easy to change</h3>
+                    <h4 class="text-border-light">(even architecture)</h4>
+                </section>
+
+                <section data-background-image="images/scrum-agile.jpg" data-background-size="cover">
+                    <h2 class="text-border-light">Myth #5</h2>
+                    <h3 class="text-border-light">Scrum === Agile</h3>
+                </section>
+
+                <section>
+                    <h2>Myth #6</h2>
+                    <p>We're agile because ...</p>
+                    <ul>
+                        <li class="fragment">... we're using Jira</li>
+                        <li class="fragment">... we're doing Standups</li>
+                        <li class="fragment">... we use microservices</li>
+                        <li class="fragment">... we're using DDD</li>
+                    </ul>
+                </section>
+
+                <section data-background-image="images/say-agile-one-more-time.png" data-background-size="cover">
+                </section>
+
+                <section data-background-image="images/agile-architecture.png" data-background-size="cover">
+                </section>
+
+                <section>
+                    <h2>Architecture</h2>
+                    <blockquote>
+                        "Software architecture refers to the high level structures of a software system, the discipline of creating such structures, and the documentation of these structures."
+                        <br>
+                        <br>
+                        - Wikipedia
+                    </blockquote>
+                </section>
+
+                <section>
+                    <h2>Architecture</h2>
+                    <blockquote>
+                        "[Architecture] is the stuff that's hard to change"
+                        <br>
+                        <br>
+                        - Martin Fowler
+                    </blockquote>
+                </section>
+
+                <section>
+                    <h2>Design Decisions</h2>
+                    <ul>
+                        <li class="fragment">as little as possible, as much as needed</li>
+                        <li class="fragment">Monolith first!</li>
+                        <li class="fragment">think big, act small</li>
+                        <li class="fragment">KISS <span class="fragment">- Keep It Simple, Stupid</span></li>
+                        <li class="fragment">YAGNIY <span class="fragment">- You ain't gonna need it (yet)</span></li>
+                        <li class="fragment">
+                            Big Ball of Mud (Foote & Yoder): design your architecture so that things which change often
+                            are closer together
+                        </li>
+                    </ul>
+
+                    <!-- SPEAKER NOTES -->
+                    <aside class="notes">
+                        <ul>
+                            <li>for small to medium size projects</li>
+                            <li>don't get vendor-locked</li>
+                        </ul>
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Whiteboard Architecture</h2>
+                    <img src="images/whiteboard-architecture.png" alt="">
+                </section>
+
+                <section data-background-image="images/child-painting.jpg" data-background-size="cover">
+                </section>
+
+                <section>
+                    <h2>Class-Responsibility-Collaboration Cards (CRC)</h2>
+                    <br>
+                    <br>
+                    <div style="background:white;width: 510px;margin: 0 auto;">
+                        <div style="width: 503px;float: left;border:3px solid #2c6aa8;">Class</div>
+                        <div style="width: 503px;float: left;border-right:3px solid #2c6aa8;border-left:3px solid #2c6aa8;border-bottom:3px solid #2c6aa8;">
+                            <div style="width: 250px;float: left;border-right:3px solid #2c6aa8;">Responsibility</div>
+                            <div style="width: 250px;float: left;">Collaboration</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Microservices</h2>
+                    <blockquote class="twitter-tweet tw-align-center" data-lang="en" style="width: 300px;"><p lang="en" dir="ltr">&quot;Beware of the distributed monolith connected via a database&quot; <a href="https://twitter.com/lornajane">@lornajane</a> <a href="https://twitter.com/hashtag/CraftConf?src=hash">#CraftConf</a> meetup <a href="https://t.co/SvsxykXiQY">pic.twitter.com/SvsxykXiQY</a></p>&mdash; Daniel Bryant (@danielbryantuk) <a href="https://twitter.com/danielbryantuk/status/857264530463883265">April 26, 2017</a></blockquote>
+                    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </section>
+
+                <section>
+                    <h2>Continuous Integration</h2>
+                    <ul>
+                        <li class="fragment">fail fast</li>
+                        <li class="fragment">learn rapidly</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Living Architecture</h2>
+                </section>
+
+                <section data-background-image="images/frankenstein.jpg" data-background-size="cover">
+                    <h2 class="text-border-light">
+                        Bring your Architecture and Documentation back to life
+                    </h2>
+                </section>
+
+                <section>
+                    <h2>Validate your Architecture</h2>
+                    <h3>with</h3>
+                    <img src="images/dephpend-logo.png" alt="">
+                </section>
+
+                <section>
+                    <img src="images/animated-architecture.gif" alt="">
                 </section>
 
                 <section>
                     <ul>
-                        <li>agile</li>
-                        <li>lean</li>
-                        <li>MVP</li>
-                        <li>DDD</li>
-                        <li>TDD</li>
-                        <li>bzzzzz ...</li>
+                        <li>validate design decisions</li>
+                        <li class="fragment">generate up to date documentation</li>
+                        <li class="fragment">assist in the design process or with refactoring</li>
                     </ul>
                 </section>
-				<section>
-					"Bzzzz ..."<br>
-					<br>
-					<p>That's the sound of a million buzzwords ...</p>
-				</section>
+
+                <section>
+                    <h2>Summary</h2>
+                    <ul>
+                        <li>Use your baloney detection kit</li>
+                        <li class="fragment">be wary of agile "processes"</li>
+                        <li class="fragment">let's all be architects</li>
+                        <li class="fragment">fail fast and learn rapidly</li>
+                        <li class="fragment">live architecture</li>
+                        <li class="fragment">validate your architecture decisions</li>
+                        <li class="fragment">revive your documentation</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Questions?</h2>
+                    <br>
+                    <h3>Michael Haeuslmann</h3>
+                    <p>@michaelhaeu</p>
+                    <p>https://github.com/mihaeu</p>
+                    <br>
+                    <h4>Feedback?</h4>
+                </section>
+
+                <section>
+                    <h3>Sources</h3>
+                    <pre style="overflow: scroll;width: 100%;height: 100%;min-height: 400px;background: #fff;font-size: 0.3em;">
+http://www.denofgeek.us/sites/denofgeekus/files/6/25/frankenstein-1931.jpg
+https://www.slideshare.net/gahlawatanju21/agile-reluctancy-in-india-anju-gahlawat
+http://www.bradvg.com/blog/the-problem-with-good-intentions/
+KurtKamka https://www.getdpi.com/forum/leica/21559-s-show-us-your-s2-shots-22.html
+https://tisquirrel.me/2016/01/03/say-agile-one-more-time/
+http://www.br.de/themen/wissen/inhalt/umwelt/wueste-wuestentiere104.html
+https://blogs.msdn.microsoft.com/eugeniop/2010/05/24/windows-azure-architecture-guide-part-1-release-candidate-documents-updated/
+http://eduart4kids.com/painting-for-kids/
+                    </pre>
+                </section>
 
 			</div>
 		</div>
