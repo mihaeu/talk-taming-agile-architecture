@@ -99,6 +99,7 @@
                             <li>2nd time at the IPC</li>
                             <li>soft talk</li>
                             <li>applied with two other technical talks</li>
+                            <li>last-minute changes because of other talks</li>
                         </ul>
                     </aside>
 				</section>
@@ -141,14 +142,10 @@
 
                 <section>
                     <h2>Agenda</h2>
-                    <ul>
-                        <li>
-                            Agile/Architecture Myths
-                        </li>
-                        <li>
-                            Practicing Agile Architecture
-                        </li>
-                    </ul>
+                    <br>
+                    <h3 class="fragment">Agile/Architecture Myths</h3>
+                    <br>
+                    <h3 class="fragment">Practicing Agile Architecture</h3>
                 </section>
 
                 <section>
@@ -159,6 +156,9 @@
                         <br>
                         - Dave Thomas
                     </blockquote>
+                </section>
+
+                <section data-background-image="images/agile-right.jpg" data-background-size="contain">
                 </section>
 
                 <section>
@@ -185,6 +185,12 @@
                     <h3>The Good, the Hype and the Ugly</h3>
                     <img src="images/agile-good-hype-ugly.png" width="200">
                     <p>Bertrand Meyer</p>
+                </section>
+
+                <section>
+                    <h2>"One Hacker Way"</h2>
+                    <h3>by Erik Meijer</h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/FvMuPtuvP5w" frameborder="0" allowfullscreen></iframe>
                 </section>
 
                 <section data-background-image="images/background-agile-manifesto.jpg" data-background-size="contain">
@@ -285,6 +291,11 @@
                     <blockquote>
                         "[Architecture] is the stuff that's hard to change"
                         <br>
+                    </blockquote>
+
+                    <blockquote class="fragment">
+                        "Architecture is not all about diagrams; it's about promoting collaboration and communication of the critical parts of the system."
+                        <br>
                         <br>
                         - Martin Fowler
                     </blockquote>
@@ -335,6 +346,17 @@
                 </section>
 
                 <section>
+                    <h2>Big Architectural Decisions</h2>
+                    <blockquote>
+                        "Beware of people who love to think about abstractions more than coding software."
+                        <br>
+                        <br>
+                        - Steve Green
+                    </blockquote>
+                    <h3 class="fragment">&rArr; you ain't gonna need it yet (YAGNI)</h3>
+                </section>
+
+                <section>
                     <h2>Microservices</h2>
                     <blockquote class="twitter-tweet tw-align-center" data-lang="en" style="width: 300px;"><p lang="en" dir="ltr">&quot;Beware of the distributed monolith connected via a database&quot; <a href="https://twitter.com/lornajane">@lornajane</a> <a href="https://twitter.com/hashtag/CraftConf?src=hash">#CraftConf</a> meetup <a href="https://t.co/SvsxykXiQY">pic.twitter.com/SvsxykXiQY</a></p>&mdash; Daniel Bryant (@danielbryantuk) <a href="https://twitter.com/danielbryantuk/status/857264530463883265">April 26, 2017</a></blockquote>
                     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -342,6 +364,8 @@
 
                 <section>
                     <h2>Continuous Integration</h2>
+                    <img src="images/works-on-my-machine.jpg" width="450">
+                    <br>
                     <ul>
                         <li class="fragment">fail fast</li>
                         <li class="fragment">learn rapidly</li>
@@ -349,7 +373,19 @@
                 </section>
 
                 <section>
-                    <h2>Living Architecture</h2>
+                    <h2>Everyday Architecture</h2>
+                    <ul>
+                        <li>sprint 0, -1, ... for big projects</li>
+                        <li class="fragment">architecture backlog items</li>
+                        <li class="fragment">code reviews also from a 30.000 foot view</li>
+                        <li class="fragment">retrospectices, ...</li>
+                        <li class="fragment">in small/medium projects, everyone is the architect</li>
+                    </ul>
+                    <blockquote class="fragment">
+                        "An architect's value is inversely proportional to the number of decisions she/he makes."
+                        <br>
+                        - Martin Fowler
+                    </blockquote>
                 </section>
 
                 <section data-background-image="images/frankenstein.jpg" data-background-size="cover">
@@ -359,9 +395,52 @@
                 </section>
 
                 <section>
+                    <h2>Validate your Documentation</h2>
+                    <iframe src="//www.slideshare.net/slideshow/embed_code/key/fBMtnjFHc2FCvP" width="500" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/svenrtbg/automatic-codefixes" title="Automatic codefixes" target="_blank">Automatic codefixes</a> </strong> by <strong><a target="_blank" href="https://www.slideshare.net/svenrtbg">Sven Rautenberg (@SvenRtbg)</a></strong> </div>
+                </section>
+
+                <section>
                     <h2>Validate your Architecture</h2>
                     <h3>with</h3>
                     <img src="images/dephpend-logo.png" alt="">
+                </section>
+
+                <section>
+                    <img src="images/dephpend-logo.png" width="200"><br>
+                    <img src="images/laravel-routing.png" alt="" width="300">
+                    <pre class="fragment"><code class="php" data-trim data-noescape>
+&lt;?php
+
+$cmd = shell_exec('dephpend text src --no-classes');
+$constraints = [
+    'Model.* --> .*View',
+    'View.*  --> .*Model',
+];
+$regex = '/('.implode(')|(', $constraints).')/x';
+
+if (preg_match($regex, $cmd)) {
+    echo 'Architecture violation'.PHP_EOL;
+    exit(1);
+}
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>ArchUnit</h2>
+                    <pre><code class="java" style="font-size:0.6em;">@ArchTest
+public static final ArchRule layers_are_respected = layeredArchitecture()
+        .layer("Root").definedBy("com.tngtech.archunit")
+        .layer("Base").definedBy("com.tngtech.archunit.base..")
+        .layer("Core").definedBy("com.tngtech.archunit.core..")
+        .layer("Lang").definedBy("com.tngtech.archunit.lang..")
+        .layer("Library").definedBy("com.tngtech.archunit.library..")
+        .layer("JUnit").definedBy("com.tngtech.archunit.junit..")
+
+        .whereLayer("JUnit").mayNotBeAccessedByAnyLayer()
+        .whereLayer("Library").mayOnlyBeAccessedByLayers("JUnit")
+        .whereLayer("Lang").mayOnlyBeAccessedByLayers("Library", "JUnit")
+        .whereLayer("Core").mayOnlyBeAccessedByLayers("Lang", "Library", "JUnit")
+        .whereLayer("Base").mayOnlyBeAccessedByLayers("Root", "Core", "Lang", "Library", "JUnit");</code></pre>
                 </section>
 
                 <section>
@@ -369,11 +448,14 @@
                 </section>
 
                 <section>
-                    <ul>
-                        <li>validate design decisions</li>
-                        <li class="fragment">generate up to date documentation</li>
-                        <li class="fragment">assist in the design process or with refactoring</li>
-                    </ul>
+                    <iframe src="//www.slideshare.net/slideshow/embed_code/key/4zxSu87afuxpke" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen></iframe>
+                    <div style="margin-bottom:5px">
+                        <strong>
+                            <a href="//www.slideshare.net/michael-haeuslmann/escaping-dependency-hell-v2" title="Escaping Dependency Hell v2" target="_blank">
+                                Escaping Dependency Hell
+                            </a>
+                        </strong>
+                    </div>
                 </section>
 
                 <section>
@@ -400,6 +482,22 @@
                 </section>
 
                 <section>
+                    <h2>Books</h2>
+                    <br>
+                    <ul>
+                        <li>Clean Architecture <small style="vertical-align: baseline;">by Robert C. Martin</small></li>
+                        <br>
+                        <li>Agile! - The Good, the Hype and the Ugly <small style="vertical-align: baseline;">by Bertrand Meyer</small></li>
+                        <br>
+                        <li>The Pragmatic Programmer <small style="vertical-align: baseline;">by Andrew Hunt, David Thomas</small></li>
+                        <br>
+                        <li>Extreme Programming Explained <small style="vertical-align: baseline;">by Kent Beck, Cynthia Andres</small></li>
+                        <br>
+                        <li>...</li>
+                    </ul>
+                </section>
+
+                <section>
                     <h3>Sources</h3>
                     <pre style="overflow: scroll;width: 100%;height: 100%;min-height: 400px;background: #fff;font-size: 0.3em;">
 http://www.denofgeek.us/sites/denofgeekus/files/6/25/frankenstein-1931.jpg
@@ -410,6 +508,8 @@ https://tisquirrel.me/2016/01/03/say-agile-one-more-time/
 http://www.br.de/themen/wissen/inhalt/umwelt/wueste-wuestentiere104.html
 https://blogs.msdn.microsoft.com/eugeniop/2010/05/24/windows-azure-architecture-guide-part-1-release-candidate-documents-updated/
 http://eduart4kids.com/painting-for-kids/
+https://image.slidesharecdn.com/quangnguyencontinuousintegrationxpday2015danangquangnguyen-150520014341-lva1-app6892/95/quang-nguyen-continuous-integration-xp-day-2015-vietnam-danang-3-638.jpg?cb=1432086426
+https://blogs.msdn.microsoft.com/willy-peter_schaub/2010/11/22/are-the-rangers-courageous-or-crazy-to-brainstorm-and-adapt-methodologies-from-clever-people-as-part-of-ruck/
                     </pre>
                 </section>
 
