@@ -183,7 +183,7 @@
                 <section>
                     <h2>"One Hacker Way"</h2>
                     <h3>by Erik Meijer</h3>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/FvMuPtuvP5w" frameborder="0" allowfullscreen></iframe>
+                    <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/FvMuPtuvP5w" frameborder="0" allowfullscreen></iframe>-->
                 </section>
 
                 <section data-background-image="images/background-agile-manifesto.jpg" data-background-size="contain">
@@ -345,8 +345,26 @@
 
                 <section>
                     <h2>Microservices</h2>
-                    <blockquote class="twitter-tweet tw-align-center" data-lang="en" style="width: 300px;"><p lang="en" dir="ltr">&quot;Beware of the distributed monolith connected via a database&quot; <a href="https://twitter.com/lornajane">@lornajane</a> <a href="https://twitter.com/hashtag/CraftConf?src=hash">#CraftConf</a> meetup <a href="https://t.co/SvsxykXiQY">pic.twitter.com/SvsxykXiQY</a></p>&mdash; Daniel Bryant (@danielbryantuk) <a href="https://twitter.com/danielbryantuk/status/857264530463883265">April 26, 2017</a></blockquote>
-                    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    <!--<blockquote class="twitter-tweet tw-align-center" data-lang="en" style="width: 300px;"><p lang="en" dir="ltr">&quot;Beware of the distributed monolith connected via a database&quot; <a href="https://twitter.com/lornajane">@lornajane</a> <a href="https://twitter.com/hashtag/CraftConf?src=hash">#CraftConf</a> meetup <a href="https://t.co/SvsxykXiQY">pic.twitter.com/SvsxykXiQY</a></p>&mdash; Daniel Bryant (@danielbryantuk) <a href="https://twitter.com/danielbryantuk/status/857264530463883265">April 26, 2017</a></blockquote>-->
+                    <!--<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>-->
+                    <ul>
+                        <li>12 misconceptions of distributed systems</li>
+                        <li>you are not Netflix</li>
+                        <li>start with a modular monolith</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Domain Driven Design</h2>
+                    <blockquote>
+                        "Complex Projects"
+                        - Eric Evans
+                    </blockquote>
+                    <ul>
+                        <li>overhead</li>
+                        <li>complex projects</li>
+                        <li></li>
+                    </ul>
                 </section>
 
                 <section>
@@ -399,6 +417,65 @@
                 </section>
 
                 <section>
+                    <img src="images/dephpend-logo.png" alt="">
+                    <h3>Features</h3>
+                    <ul>
+                        <li class="fragment">
+                            <strong>Text Output</strong>
+                            <br>
+                            For quick feedback, debugging, UNIX pipes etc.
+                        </li>
+                        <br>
+                        <li class="fragment">
+                            <strong>Various Visualisations</strong> (UML &amp; DSM &amp; dot)
+                            <br>
+                            Detailed dependency & architectural analysis
+                        </li>
+                        <br>
+                        <li class="fragment">
+                            <strong>(Metrics)</strong>
+                        </li>
+                    </ul>
+                </section>
+
+                <section>
+                    <img src="images/dephpend-logo.png" alt="">
+                    <h3>How does it work?</h3>
+                    <ul>
+                        <li>parses PHP code</li>
+                        <li class="fragment">builds an abstract representation (AST)</li>
+                        <li class="fragment">detects dependencies for all classes</li>
+                        <li class="fragment">applies filters and transformers</li>
+                        <li class="fragment">writes output as text, pictures e.g.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <img src="images/dephpend-logo.png" alt="">
+                    <pre class="bash"><code data-trim data-noescape style="font-size: 0.6em;">
+<span class="fragment highlight-current-green">λ wget http://phar.dephpend.com/dephpend.phar -O ~/bin/dephpend</span>
+<span class="fragment highlight-current-green">λ dephpend --help
+      _      _____  _    _ _____               _
+     | |    |  __ \| |  | |  __ \             | |
+   __| | ___| |__) | |__| | |__) |__ _ __   __| |
+  / _` |/ _ \  ___/|  __  |  ___/ _ \ _ \ / _` |
+ | (_| |  __/ |    | |  | | |  |  __/ | | | (_| |
+  \__,_|\___|_|    |_|  |_|_|   \___|_| |_|\__,_| version 0.4
+
+ Usage: ...
+</span><span class="fragment highlight-current-green">λ dephpend <strong>text</strong> ~/workspace/dephpend/src
+Mihaeu\PhpDependencies\Util\AbstractMap --> Mihaeu\PhpDependencies\Util\Collection
+Mihaeu\PhpDependencies\Util\DI --> Mihaeu\PhpDependencies\Analyser\Analyser
+...
+</span>
+                    </code></pre>
+                </section>
+
+                <section>
+                    <img src="images/animated-architecture.gif" alt="">
+                </section>
+
+                <section>
                     <img src="images/dephpend-logo.png" width="200"><br>
                     <img src="images/laravel-routing.png" alt="" width="300">
                     <pre class="fragment"><code class="php" data-trim data-noescape>
@@ -437,11 +514,7 @@ public static final ArchRule layers_are_respected = layeredArchitecture()
                 </section>
 
                 <section>
-                    <img src="images/animated-architecture.gif" alt="">
-                </section>
-
-                <section>
-                    <iframe src="//www.slideshare.net/slideshow/embed_code/key/4zxSu87afuxpke" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen></iframe>
+                    <!--<iframe src="//www.slideshare.net/slideshow/embed_code/key/4zxSu87afuxpke" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen></iframe>-->
                     <div style="margin-bottom:5px">
                         <strong>
                             <a href="//www.slideshare.net/michael-haeuslmann/escaping-dependency-hell-v2" title="Escaping Dependency Hell v2" target="_blank">
