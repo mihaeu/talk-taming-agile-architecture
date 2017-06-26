@@ -1,75 +1,62 @@
 # Presentation:
 
--         find a better picture for pseudo agile Scrum
+-  find a better picture for pseudo agile Scrum
+-  no transition for the "Design Decision" slide, change to summary
+-  why do traditional architecture approaches often fail
+   - architect not part of the team
+   - ivory tower architecture
+   - making decisions too early
+   - transition: how can we plan for change we don't know about
+     - disclaimer: for small-medium size projects
+     - gather a list of requirements
+     - ask the PO for priorities
+     - gather a set of reqs which make up a minimum viable product
+       - focus on nouns and verbs
+       - whiteboard
+       - CRC cards
+     - find the simplest architecture which gets the job done
+       - this can be a standard CMS
+       - or MVC or whatever
+       - don't overthink/overdesign at this stage
+       - consider building a prototype
+       - are there any comparable decisions
+     - now consider other requirements, how flexible is the architecture
+       - mark things as you move them around
+       - which parts change more frequently
+     - bonus: come up with other requirements which were not specified
+       - do the requirements break your design
+       -  or are they hard to fit in?
+       - if so and if you consider this crucial make sure to let your PO know
+       - but don't overdesign
+     - important:
+       - time to market
+       - fail fast
+       - **communcation!!!**
+       - everyone should be on-board or understand
+       - every design has trade-offs
+       - don't worry about race-conditions just yet :) (in most cases)
+   - rinse and repeat: sprint -1 or 0 in the beginning, during/after sprint planning and retrospectives
+   - summary: we can (and have to) all be part of this
+     - but: disclaimer
+     - and learn your tools
+     - if all you have in your toolbelt is a hammer, every problem is going to look like a nail to you
+-  move abstraction slide forward
+-  maybe remove continuous integration slide?
+-  move Sven's slides to the back, but talk about it and say we're about to open-source it
+-  more concrete information on agile documentation
+   -  generate as much as possible
+   -  single source of truth
+   -  BDD: requirements specification as documentation AND verification
+   -  architecture specification as verification OR at-least capture current architecture
+   -  versioned: Word < Wiki/Confluence < Versioned
 
--         no transition for the "Design Decision" slide, change to summary
+-  transition to dePHPend
+-  Idea:
+   -  describe your architecture in PlantUML syntax
+   -  match your namespaces to architectural components
+   -  generate dePHPend constraints from PlantUML
+   -  AND use the diagrams to document your architecture
+   -  no more lying documentation
+   -  less work, safer architecture
+   -  no more "<?php echo UserModel::getUser()->getUsername();"
 
--         why do traditional architecture approaches often fail
-          - architect not part of the team
-          - ivory tower architecture
-          - making decisions too early
-          - transition: how can we plan for change we don't know about
-            - disclaimer: for small-medium size projects
-          - gather a list of requirements
-          - ask the PO for priorities
-          - gather a set of reqs which make up a minimum viable product
-            - focus on nouns and verbs
-            - whiteboard
-            - CRC cards
-          - find the simplest architecture which gets the job done
-            - this can be a standard CMS
-            - or MVC or whatever
-            - don't overthink/overdesign at this stage
-            - consider building a prototype
-            - are there any comparable decisions
-          - now consider other requirements, how flexible is the architecture
-            - mark things as you move them around
-            - which parts change more frequently
-          - bonus: come up with other requirements which were not specified
-            - do the requirements break your design
-            - or are they hard to fit in?
-            - if so and if you consider this crucial make sure to let your PO know
-            - but don't overdesign
-          - important:
-            - time to market
-            - fail fast
-            - **communcation!!!**
-            - everyone should be on-board or understand
-            - every design has trade-offs
-            - don't worry about race-conditions just yet :) (in most cases)
--         rinse and repeat: sprint -1 or 0 in the beginning, during/after sprint planning and retrospectives
-          - summary: we can (and have to) all be part of this
-          - but: disclaimer
-          - and learn your tools
-          - if all you have in your toolbelt is a hammer, every problem is going to look like a nail to you 
-
--         move abstraction slide forward
-
--         maybe remove continuous integration slide?
-
--         move Sven's slides to the back, but talk about it and say we're about to open-source it
-
--         more concrete information on agile documentation
-
-          -  generate as much as possible
-          -  single source of truth
-          -  BDD: requirements specification as documentation AND verification
-          -  architecture specification as verification OR at-least capture current architecture
-          -  versioned: Word < Wiki/Confluence < Versioned
-
-
--   transition to dePHPend
-
--   Idea:
-
-    -  describe your architecture in PlantUML syntax
-    -  match your namespaces to architectural components
-    -  generate dePHPend constraints from PlantUML
-    -  AND use the diagrams to document your architecture
-    -  no more lying documentation
-    -  less work, safer architecture 
-    -  no more "<?php echo UserModel::getUser()->getUsername();"
-
-# Offline
-
--  book train tickets
