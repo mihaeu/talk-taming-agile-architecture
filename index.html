@@ -197,7 +197,7 @@ The opinions expressed in this presentation and on the following slides are sole
                 <section>
                     <h2>"One Hacker Way"</h2>
                     <h3>by Erik Meijer</h3>
-                    <!--<iframe width="560" height="315" src="https://www.youtube.com/embed/FvMuPtuvP5w" frameborder="0" allowfullscreen></iframe>-->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/FvMuPtuvP5w" frameborder="0" allowfullscreen></iframe>
                 </section>
 
                 <section data-background-image="images/background-agile-manifesto.jpg" data-background-size="contain">
@@ -302,6 +302,16 @@ The opinions expressed in this presentation and on the following slides are sole
                     </blockquote>
                 </section>
 
+                <section>
+                    <h2>Problems with traditional architecture</h2>
+                    <ul class="pad-xs">
+                        <li>ivory-tower architecture</li>
+                        <li>making unnecessary decisions too early</li>
+                        <li>architect not part of the team</li>
+                        <li>architect not accountable</li>
+                    </ul>
+                </section>
+
                 <section data-background-image="images/questions.jpg" data-background-size="contain">
                     <h2 class="fragment text-border-light">Architecture is the stuff that's hard to change?</h2>
                     <h2 class="fragment text-border-light">So how do we come up with agile architecture?</h2>
@@ -340,12 +350,11 @@ The opinions expressed in this presentation and on the following slides are sole
                 <section>
                     <h2>Class-Responsibility-Collaboration Cards (CRC)</h2>
                     <br>
-                    <br>
-                    <div style="background:white;width: 510px;margin: 0 auto;">
-                        <div style="width: 503px;float: left;border:3px solid #2c6aa8;">Class</div>
-                        <div style="width: 503px;float: left;border-right:3px solid #2c6aa8;border-left:3px solid #2c6aa8;border-bottom:3px solid #2c6aa8;">
-                            <div style="width: 250px;float: left;border-right:3px solid #2c6aa8;">Responsibility</div>
-                            <div style="width: 250px;float: left;">Collaboration</div>
+                    <div style="background:white;width: 710px;margin: 0 auto;">
+                        <div style="width: 703px;float: left;height: 80px;padding-top: 20px;border:3px solid #2c6aa8;">Class</div>
+                        <div style="width: 703px;float: left;height: 100px;border-right:3px solid #2c6aa8;border-left:3px solid #2c6aa8;border-bottom:3px solid #2c6aa8;">
+                            <div style="width: 350px;float: left;height: 80px;padding-top: 20px;border-right:3px solid #2c6aa8;">Responsibility</div>
+                            <div style="width: 350px;float: left;height: 80px;padding-top: 20px;">Collaboration</div>
                         </div>
                     </div>
                 </section>
@@ -489,12 +498,18 @@ The opinions expressed in this presentation and on the following slides are sole
                 </section>
 
                 <section>
-                    <h2>Validate your Documentation</h2>
-                    www.slideshare.net/svenrtbg/automatic-codefixes
+                    <h2>Revive your Documentation</h2>
+                    <ul class="pad-xxs">
+                        <li class="fragment">Single Source of Truth</li>
+                        <li class="fragment">Behavior Driven Development</li>
+                        <li class="fragment">Word</span><span class="fragment"> < Wiki / Confluence</span><span class="fragment"> < Markdown/TeX + Git</span></li>
+                        <li class="fragment">Extract information (e.g. screenshots from acceptance tests, architecture from code, ...)</li>
+                        <li class="fragment">Broken window theory (markdown linters, grammar check e.g. <em>write-good</em>, check changelog, ...)</li>
+                    </ul>
                 </section>
 
                 <section>
-                    <h2>Validate your Architecture</h2>
+                    <h2>Revive your Architecture</h2>
                     <img src="images/dephpend-logo.png" alt="">
                     <br>
                     <ul style="line-height:2;">
@@ -603,7 +618,7 @@ public static final ArchRule layers_are_respected = layeredArchitecture()
                 </section>
 
                 <section>
-                    <!--<iframe src="//www.slideshare.net/slideshow/embed_code/key/4zxSu87afuxpke" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen></iframe>-->
+                    <iframe src="//www.slideshare.net/slideshow/embed_code/key/4zxSu87afuxpke" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen></iframe>
                     <div style="margin-bottom:5px">
                         <strong>
                             <a href="//www.slideshare.net/michael-haeuslmann/escaping-dependency-hell-v2" title="Escaping Dependency Hell v2" target="_blank">
@@ -639,15 +654,11 @@ public static final ArchRule layers_are_respected = layeredArchitecture()
                 <section>
                     <h2>Books</h2>
                     <br>
-                    <ul>
+                    <ul class="pad-xs">
                         <li>Clean Architecture <small style="vertical-align: baseline;">by Robert C. Martin</small></li>
-                        <br>
                         <li>Agile! - The Good, the Hype and the Ugly <small style="vertical-align: baseline;">by Bertrand Meyer</small></li>
-                        <br>
                         <li>The Pragmatic Programmer <small style="vertical-align: baseline;">by Andrew Hunt, David Thomas</small></li>
-                        <br>
                         <li>Extreme Programming Explained <small style="vertical-align: baseline;">by Kent Beck, Cynthia Andres</small></li>
-                        <br>
                         <li>...</li>
                     </ul>
                 </section>
