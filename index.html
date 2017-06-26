@@ -73,8 +73,13 @@
             ul.small li {
                 font-size: 0.6em;
             }
+
             ul.pad-xs li {
                 padding: 20px 0 20px 0;
+            }
+
+            ul.pad-xxs li {
+                padding: 10px 0 10px 0;
             }
         </style>
 	</head>
@@ -302,27 +307,26 @@ The opinions expressed in this presentation and on the following slides are sole
                     <h2 class="fragment text-border-light">So how do we come up with agile architecture?</h2>
                 </section>
 
-                <section>
-                    <h2>Design Decisions</h2>
-                    <ul>
-                        <li class="fragment">as little as possible, as much as needed</li>
-                        <li class="fragment">Monolith first!</li>
-                        <li class="fragment">think big, act small</li>
-                        <li class="fragment">KISS <span class="fragment">- Keep It Simple, Stupid</span></li>
-                        <li class="fragment">YAGNIY <span class="fragment">- You ain't gonna need it (yet)</span></li>
-                        <li class="fragment">
-                            Big Ball of Mud (Foote & Yoder): design your architecture so that things which change often
-                            are closer together
-                        </li>
-                    </ul>
+                <section data-background-image="images/cards.jpg" data-background-size="contain">
+                    <h2 class="fragment text-border-light">Gather all known requirements</h2>
+                </section>
 
-                    <!-- SPEAKER NOTES -->
-                    <aside class="notes">
-                        <ul>
-                            <li>for small to medium size projects</li>
-                            <li>don't get vendor-locked</li>
-                        </ul>
-                    </aside>
+                <section data-background-image="images/prioritize.png" data-background-size="cover">
+                </section>
+
+                <section data-background-image="images/story.png" data-background-size="cover">
+                    <h3 class="fragment">Identify nouns and verbs</h3>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
                 </section>
 
                 <section>
@@ -344,6 +348,54 @@ The opinions expressed in this presentation and on the following slides are sole
                             <div style="width: 250px;float: left;">Collaboration</div>
                         </div>
                     </div>
+                </section>
+
+                <section>
+                    <img src="images/repeat.png" width="400">
+                </section>
+
+                <section>
+                    <blockquote>
+                        "Factor your system so that artifacts that change at similar rates are together."
+                        <br>
+                        <br>
+                        - Foote & Yoder
+                    </blockquote>
+                </section>
+
+                <section>
+                    <h2>Test your architecture</h2>
+                    <img src="images/impossible.png" width="700">
+                </section>
+
+                <section>
+                    <h3>Go crazy</h3>
+                    <ul class="pad-xxs">
+                        <li>native support for Arabic users</li>
+                        <li>Bitcoin check-out</li>
+                        <li>record user interaction for audits</li>
+                        <li>make all user actions undoable</li>
+                        <li>create native apps for iOS, Android, ...</li>
+                        <li>add offline support</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Design Decisions</h2>
+                    <ul class="pad-xs">
+                        <li class="fragment">as little as possible, as much as needed</li>
+                        <li class="fragment">think big, act small</li>
+                        <li class="fragment">KISS <span class="fragment">- Keep It Simple, Stupid</span></li>
+                        <li class="fragment">YAGNIY <span class="fragment">- You ain't gonna need it (yet)</span></li>
+                    </ul>
+
+                    <!-- SPEAKER NOTES -->
+                    <aside class="notes">
+                        <ul>
+                            <li>for small to medium size projects</li>
+                            <li>don't get vendor-locked</li>
+                        </ul>
+                    </aside>
                 </section>
 
                 <section>
@@ -412,16 +464,6 @@ The opinions expressed in this presentation and on the following slides are sole
                         <li class="fragment">not a one-size-fits-all approach</li>
                     </ul>
                     <h3 class="fragment">Same thing goes for Event Sourcing</h3>
-                </section>
-
-                <section>
-                    <h2>Continuous Integration</h2>
-                    <img src="images/works-on-my-machine.jpg" width="450">
-                    <br>
-                    <ul>
-                        <li class="fragment">fail fast</li>
-                        <li class="fragment">learn rapidly</li>
-                    </ul>
                 </section>
 
                 <section>
@@ -626,6 +668,8 @@ https://blogs.msdn.microsoft.com/willy-peter_schaub/2010/11/22/are-the-rangers-c
 https://dotnetcodr.files.wordpress.com/2015/07/ddd-full-diagram1.png
 https://images-na.ssl-images-amazon.com/images/I/81vKl1%2BuEVL._SL1500_.jpg
 https://dotnetcodr.files.wordpress.com/2015/07/ddd-full-diagram1.pnghttp://canarydwarf.co.uk/b/wp-content/uploads/2014/05/CD_questions_68942389.jpg
+https://www.batimes.com/images/wick_mar4_2.jpg
+https://guidedpathedge.com/wp-content/uploads/2016/01/keep-calm-and-prioritize.png
                     </pre>
                 </section>
 
