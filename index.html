@@ -14,7 +14,7 @@
 
 		<!-- Printing and PDF exports -->
 		<script>
-			var link = document.createElement( 'link' );
+			let link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
@@ -36,9 +36,8 @@
             }
 
             body {
-                background: url(images/bg.png);
                 background-size: cover;
-                background-repeat: no-repeat;
+                background: url(images/bg.png) no-repeat;
             }
 
             .reveal footer {
@@ -60,7 +59,7 @@
 
             .reveal .text-border-light {
                 font-weight: bold;
-                text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+                text-shadow: -2px 0 white, 0 2px white, 2px 0 white, 0 -2px white;
             }
 
             .reveal .progress {
@@ -73,6 +72,9 @@
 
             ul.small li {
                 font-size: 0.6em;
+            }
+            ul.pad-xs li {
+                padding: 20px 0 20px 0;
             }
         </style>
 	</head>
@@ -112,6 +114,13 @@
                 </section>
 
                 <section data-background-image="images/tng-tag-cloud.png" data-background-size="contain">
+                </section>
+
+                <section>
+                    <h3>Disclaimer</h3>
+                    <blockquote>
+The opinions expressed in this presentation and on the following slides are solely those of the presenter and not necessarily those of TNG Technology Consulting.
+                    </blockquote>
                 </section>
 
                 <section data-background-image="images/background-agile-manifesto.jpg" data-background-size="contain">
@@ -249,7 +258,7 @@
                 <section>
                     <h2>Myth #6</h2>
                     <p>We're agile because ...</p>
-                    <ul>
+                    <ul class="pad-xs">
                         <li class="fragment">... we're using Jira</li>
                         <li class="fragment">... we're doing Standups</li>
                         <li class="fragment">... we use microservices</li>
@@ -286,6 +295,11 @@
                         <br>
                         - Martin Fowler
                     </blockquote>
+                </section>
+
+                <section data-background-image="images/questions.jpg" data-background-size="contain">
+                    <h2 class="fragment text-border-light">Architecture is the stuff that's hard to change?</h2>
+                    <h2 class="fragment text-border-light">So how do we come up with agile architecture?</h2>
                 </section>
 
                 <section>
@@ -333,38 +347,71 @@
                 </section>
 
                 <section>
-                    <h2>Big Architectural Decisions</h2>
+                    <h2>Architectural Decisions</h2>
                     <blockquote>
                         "Beware of people who love to think about abstractions more than coding software."
-                        <br>
-                        <br>
                         - Steve Green
                     </blockquote>
-                    <h3 class="fragment">&rArr; you ain't gonna need it yet (YAGNI)</h3>
+                    <img src="images/beware.jpg" alt="" width="350">
+                    <!-- SPEAKER NOTES -->
+                    <aside class="notes">
+                        <ul>
+                            <li>YAGNI</li>
+                        </ul>
+                    </aside>
                 </section>
 
                 <section>
                     <h2>Microservices</h2>
-                    <!--<blockquote class="twitter-tweet tw-align-center" data-lang="en" style="width: 300px;"><p lang="en" dir="ltr">&quot;Beware of the distributed monolith connected via a database&quot; <a href="https://twitter.com/lornajane">@lornajane</a> <a href="https://twitter.com/hashtag/CraftConf?src=hash">#CraftConf</a> meetup <a href="https://t.co/SvsxykXiQY">pic.twitter.com/SvsxykXiQY</a></p>&mdash; Daniel Bryant (@danielbryantuk) <a href="https://twitter.com/danielbryantuk/status/857264530463883265">April 26, 2017</a></blockquote>-->
-                    <!--<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>-->
-                    <ul>
-                        <li>12 misconceptions of distributed systems</li>
-                        <li>you are not Netflix</li>
-                        <li>start with a modular monolith</li>
-                    </ul>
+                    <blockquote class="twitter-tweet tw-align-center" data-lang="en" style="width: 300px;"><p lang="en" dir="ltr">&quot;Beware of the distributed monolith connected via a database&quot; <a href="https://twitter.com/lornajane">@lornajane</a> <a href="https://twitter.com/hashtag/CraftConf?src=hash">#CraftConf</a> meetup <a href="https://t.co/SvsxykXiQY">pic.twitter.com/SvsxykXiQY</a></p>&mdash; Daniel Bryant (@danielbryantuk) <a href="https://twitter.com/danielbryantuk/status/857264530463883265">April 26, 2017</a></blockquote>
+                    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </section>
+
+                <section>
+                    <h3>Fallacies of distributed computing</h3>
+                    <ol>
+                        <li>The network is reliable.</li>
+                        <li class="fragment">Latency is zero.</li>
+                        <li class="fragment">Bandwidth is infinite.</li>
+                        <li class="fragment">The network is secure.</li>
+                        <li class="fragment">Topology doesn't change.</li>
+                        <li class="fragment">There is one administrator.</li>
+                        <li class="fragment">Transport cost is zero.</li>
+                        <li class="fragment">The network is homogeneous.</li>
+                    </ol>
+                </section>
+
+                <section>
+                    <h2>You are not Netflix.</h2>
+                    <h2 class="fragment">You're probably fine starting out with a Monolith.</h2>
+                </section>
+
+                <section>
+                    <h2>Think in modules/services</h2>
+                    <h2 class="fragment">but</h2>
+                    <h2 class="fragment">distribute over the network only if absolutely necessary</h2>
                 </section>
 
                 <section>
                     <h2>Domain Driven Design</h2>
-                    <blockquote>
-                        "Complex Projects"
-                        - Eric Evans
-                    </blockquote>
-                    <ul>
-                        <li>overhead</li>
-                        <li>complex projects</li>
-                        <li></li>
+                    <h3>vs.</h3>
+                    <h2>Domain Centered</h2>
+                </section>
+
+                <section>
+                    <h2>Domain-Driven Design</h2>
+                    <img src="images/ddd2.png" alt="" width="600">
+                </section>
+
+                <section>
+                    <h2>Domain Driven Design</h2>
+                    <ul class="pad-xs">
+                        <li>Tackling <strong>Complexity</strong> in the Heart of Software</li>
+                        <li class="fragment">introduces overhead</li>
+                        <li class="fragment">requires knowledge of existing architectural patterns</li>
+                        <li class="fragment">not a one-size-fits-all approach</li>
                     </ul>
+                    <h3 class="fragment">Same thing goes for Event Sourcing</h3>
                 </section>
 
                 <section>
@@ -576,6 +623,9 @@ https://blogs.msdn.microsoft.com/eugeniop/2010/05/24/windows-azure-architecture-
 http://eduart4kids.com/painting-for-kids/
 https://image.slidesharecdn.com/quangnguyencontinuousintegrationxpday2015danangquangnguyen-150520014341-lva1-app6892/95/quang-nguyen-continuous-integration-xp-day-2015-vietnam-danang-3-638.jpg?cb=1432086426
 https://blogs.msdn.microsoft.com/willy-peter_schaub/2010/11/22/are-the-rangers-courageous-or-crazy-to-brainstorm-and-adapt-methodologies-from-clever-people-as-part-of-ruck/
+https://dotnetcodr.files.wordpress.com/2015/07/ddd-full-diagram1.png
+https://images-na.ssl-images-amazon.com/images/I/81vKl1%2BuEVL._SL1500_.jpg
+https://dotnetcodr.files.wordpress.com/2015/07/ddd-full-diagram1.pnghttp://canarydwarf.co.uk/b/wp-content/uploads/2014/05/CD_questions_68942389.jpg
                     </pre>
                 </section>
 
